@@ -1,0 +1,1596 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  padding: 15px 10px;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  text-align: center;
+}
+
+/* //// startingScreen ///// */
+
+#startingScreen {
+  width: 320px;
+  padding: 30px 10px 20px;
+  display: none;
+}
+
+#startingScreen .mainImageAtStartingScreen {
+  margin: 0 auto;
+  width: auto;
+  height: 100px;
+}
+
+#startingScreen ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 50px 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#startingScreen ul li div {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+#startingScreen ul li svg {
+  width: 25px;
+  flex-shrink: 0;
+}
+
+#startingScreen ul li p {
+  font-size: 0.85rem;
+  line-height: 1.2rem;
+  color: rgb(88, 88, 88);
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+#startingScreen ul li p span {
+  color: #03ade0;
+  padding: 0;
+  margin: 0;
+}
+
+/* // startingScreen  button */
+
+/* From Uiverse.io by vinodjangid07 */
+#startingScreen .Btn-Container {
+  display: flex;
+  width: 14rem;
+  height: fit-content;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0px 3px 20px #dadada;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+  font-weight: 600;
+}
+#startingScreen .icon-Container {
+  width: 40px;
+  height: 40px;
+  background-color: #13a9d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+#startingScreen .text {
+  width: calc(170px - 40px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #696969;
+  font-size: 1.1em;
+  letter-spacing: 1.2px;
+}
+#startingScreen .icon-Container svg {
+  transition-duration: 1.5s;
+  margin-left: 5px;
+}
+#startingScreen .Btn-Container:hover {
+  box-shadow: 0px 3px 20px #b0edff;
+}
+#startingScreen .Btn-Container:hover .icon-Container svg {
+  transition-duration: 1.5s;
+  animation: arrow 1s linear infinite;
+}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    margin-left: 0px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 8px;
+  }
+}
+
+/* ////////////////////////////////////////////////// */
+
+/* //// accountSetup ///// */
+
+#accountSetup {
+  width: 350px;
+  padding: 20px 10px;
+  display: none;
+}
+
+.accountSetupTitle {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#masterPassword {
+  border: 2px soolid red;
+  border-radius: 10px;
+  padding: 13px 20px !important;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease-in-out;
+  box-shadow: 0px 3px 20px #dadada;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.initialAccountPinLabel {
+  font-size: 1rem !important;
+  text-align: center;
+  position: relative !important;
+  font-weight: 600;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+#initialAccountPin {
+  letter-spacing: 20px !important;
+  font-size: 1.4rem !important;
+  text-align: center;
+  border: transparent !important;
+  height: auto !important;
+}
+
+/* /// NAME INPUT */
+
+/* From Uiverse.io by liyaxu123 */
+#accountSetup .form-control {
+  position: relative;
+  width: 100%;
+  min-height: 65px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+#accountSetup .form-control input {
+  background-color: transparent;
+  border: 0;
+  border: 2px #000 solid;
+  border-radius: 9999px;
+  display: block;
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #7c7c7c;
+}
+
+#accountSetup .form-control input:focus,
+#accountSetup .form-control input:valid {
+  outline: 0;
+  border-color: #00b7ff;
+}
+
+#accountSetup .form-control label {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  pointer-events: none;
+}
+
+#accountSetup .form-control label span {
+  display: inline-block;
+  font-size: 16px;
+  min-width: 5px;
+  color: #cecece;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#accountSetup .form-control input:focus + label span,
+#accountSetup .form-control input:valid + label span {
+  color: #00b7ff;
+  transform: translateY(-30px);
+}
+
+/* //// SAVE BUTTON */
+
+/* From Uiverse.io by cssbuttons-io */
+#accountSetup button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: 15px;
+  font-family: inherit;
+  margin-top: 40px;
+}
+
+#accountSetup button.saveAccountDetailsInitial {
+  width: 12rem;
+  height: auto;
+}
+
+#accountSetup button.saveAccountDetailsInitial .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+#accountSetup button.saveAccountDetailsInitial .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+#accountSetup button.saveAccountDetailsInitial .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+#accountSetup button.saveAccountDetailsInitial .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+#accountSetup button.saveAccountDetailsInitial .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#accountSetup button:hover .circle {
+  width: 100%;
+}
+
+#accountSetup button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+#accountSetup button:hover .button-text {
+  color: #fff;
+}
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+
+#pinAuthSection {
+  padding: 20px 10px;
+  width: 350px;
+}
+
+#masterPassAuthSection {
+  width: 350px;
+  padding: 20px 10px;
+  display: none;
+}
+
+#pinAuthSection .pinAuthSectionTitle {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#pinAuthSection #pinInputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 50px 0px 25px;
+}
+
+#masterPassAuthSection #masterPass {
+  margin: 50px 0px 25px;
+}
+
+#masterPassAuthSection #masterPassInput {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(180, 180, 180);
+}
+
+#pinAuthSection #pinInputs input {
+  width: 35px;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgb(180, 180, 180);
+}
+
+#pinAuthSection .pin-label {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* ///////////// button */
+
+/* From Uiverse.io by ryota1231 */
+#pinAuthSection .animated-button,
+#masterPassAuthSection .animated-button {
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  /* background-color: ; */
+  border-radius: 100px;
+  font-weight: 600;
+  color: #1f8ed8;
+  box-shadow: 0 0 0 2px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#pinAuthSection .animated-button svg,
+#masterPassAuthSection .animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: #25b2dd;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#pinAuthSection .animated-button .arr-1,
+#masterPassAuthSection .animated-button .arr-1 {
+  right: 16px;
+}
+
+#pinAuthSection .animated-button .arr-2,
+#masterPassAuthSection .animated-button .arr-2 {
+  left: -25%;
+}
+
+#pinAuthSection .animated-button .circle,
+#masterPassAuthSection .animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #c5e5e4;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#pinAuthSection .animated-button .text,
+#masterPassAuthSection .animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#pinAuthSection .animated-button:hover,
+#masterPassAuthSection .animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+#pinAuthSection .animated-button:hover .arr-1,
+#masterPassAuthSection .animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+#pinAuthSection .animated-button:hover .arr-2,
+#masterPassAuthSection .animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+#pinAuthSection .animated-button:hover .text,
+#masterPassAuthSection .animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+#pinAuthSection .animated-button:hover svg,
+#masterPassAuthSection .animated-button:hover svg {
+  fill: #1f387e;
+}
+
+#pinAuthSection .animated-button:active,
+#masterPassAuthSection .animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+#pinAuthSection .animated-button:hover .circle,
+#masterPassAuthSection .animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+
+#dashboardSection {
+  width: 350px;
+  padding: 15px 20px;
+  display: none;
+}
+
+#dashboardSection .header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#dashboardSection .header svg {
+  width: 30px;
+  height: 30px;
+  color: #0e5f77;
+}
+
+#dashboardSection .header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 2px #fff;
+  transition: all 0.4s ease;
+  color: #0e5f77;
+}
+
+#dashboardSection .header h3 span {
+  color: #27beec;
+}
+
+/* From Uiverse.io by adamgiebl */
+
+.form-control {
+  margin: 20px 0px;
+}
+.input {
+  color: #727272;
+  font-size: 0.5rem;
+  background-color: transparent;
+  letter-spacing: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+  box-shadow: -1px 0px 16px 3px rgb(80 80 80 / 10%);
+  border-radius: 10px 10px 0 0;
+}
+
+.input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:focus + .input-border {
+  width: 100%;
+}
+
+.form-control {
+  position: relative;
+  --width-of-input: 300px;
+}
+
+.input-alt {
+  font-size: 1rem;
+  padding-inline: 1em;
+  padding-block: 1em;
+  font-weight: 500;
+  box-shadow: -1px 0px 16px 3px rgba(197, 222, 255, 0.699);
+}
+
+.input-border-alt {
+  height: 3px;
+  background: linear-gradient(90deg, #107594 0%, #0a495c 50%, #47c9ff 100%);
+  transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.input-alt:focus + .input-border-alt {
+  width: 100%;
+}
+
+#catergoryAndToggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 5px 10px;
+}
+
+#catergoryAndToggle .catergoryAndToggle_category {
+  font-weight: 600;
+  font-size: 20px;
+  color: #575757;
+  padding: 0;
+  margin: 0;
+}
+
+#catergoryAndToggle #catergoryAndToggle_Toggle {
+  width: 25px;
+  color: #636363;
+  cursor: pointer;
+}
+
+#allPasswordType {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 5px 10px;
+}
+
+#allPasswordType > div {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+}
+
+/* From Uiverse.io by biswacpcode */
+#allPasswordType button {
+  color: rgb(95, 95, 95);
+  text-decoration: none;
+  font-size: 16px;
+  border: none;
+  background: none;
+  font-weight: 500;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  flex-shrink: 0;
+  width: 100%;
+  cursor: pointer;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid rgb(221, 221, 221);
+  transition: cubic-bezier(0.575, 0.885, 0.32, 5.275);
+  transition: 500ms;
+}
+
+/* From Uiverse.io by biswacpcode */
+#allPasswordType > div button {
+  flex-shrink: 1;
+}
+
+#allPasswordType button:hover {
+  border: 2px solid rgb(0, 183, 255);
+  transform: rotate(2deg);
+  color: rgb(0, 183, 255);
+}
+
+/* '''''''''''''''''''''''''''''''' */
+#addPassForPassManager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0px 0px 10px;
+  padding: 0 25px;
+  cursor: pointer;
+  border: 2px solid rgb(224, 224, 224);
+  border-radius: 999px;
+  transition: 500ms;
+}
+#addPassForPassManager:hover {
+  border-color: #00b7ff;
+}
+
+#addPassForPassManager p {
+  font-size: 16px;
+  color: rgb(100, 100, 100);
+}
+
+#addPassForPassManager svg {
+  width: 16px;
+  color: gray;
+}
+
+/* '''''''''''''''''''''''''''''''' */
+
+#passwordManager {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0px;
+}
+
+#passwordManager h3 {
+  font-size: 17px;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+#passwordManager > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(247, 247, 247);
+  border-radius: 10px;
+  padding: 15px;
+}
+#passwordManager > div > div {
+  text-align: left;
+}
+
+#passwordManager > div:hover {
+  background-color: rgb(243, 243, 243);
+}
+
+#passwordManager > div .platformName {
+  font-size: 17px;
+  color: #aaaaaa;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+#passwordManager > div .samplePass {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+}
+
+#passwordManager > div svg {
+  width: 32px;
+  color: gray;
+  cursor: pointer;
+  padding: 8px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
+}
+#passwordManager > div svg:hover {
+  background-color: rgb(216, 216, 216);
+  color: #00b7ff;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.modal-content > div > input {
+  border: 2px solid #888;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 500ms;
+  width: 100%;
+}
+.modal-content > div > button {
+  padding: 10px 20px;
+  width: 100%;
+  border: 2px solid #00b7ff;
+  border-radius: 9999px;
+  color: #00b7ff;
+  background-color: transparent;
+  margin: 10px 0px 15px;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.editPasswordModalHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+
+#rowPasswordSection {
+  width: 350px;
+  padding-bottom: 20px;
+  display: none;
+}
+
+#rowPasswordSection .header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#rowPasswordSection .header svg {
+  width: 30px;
+  height: 30px;
+  color: #a8a8a8;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#rowPasswordSection .header svg:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+#rowPasswordSection .header h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 2px #fff;
+  transition: all 0.4s ease;
+  color: #a0a0a0;
+}
+
+#rowPasswordSection .header h4 span {
+  color: #27beec;
+}
+
+/* -------------------------------------------- */
+
+#rowPasswordSection .passwordGenerateDiv {
+  padding: 20px 30px 5px;
+}
+#rowPasswordSection .passwordGenerateDiv > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px;
+}
+
+#rowPasswordSection .passwordGenerateDiv > div > p#rowGeneratedPassword {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 2px #fff;
+  transition: all 0.4s ease;
+  color: #8d8d8d;
+}
+
+#rowPasswordSection .passwordGenerateDiv > div > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#rowPasswordSection .passwordGenerateDiv > div > div > span {
+  background-color: #c0c0c0;
+  border-radius: 9999px;
+  padding: 4px 15px !important;
+}
+
+#rowPasswordSection .passwordGenerateDiv svg {
+  width: 40px;
+  height: 40px;
+  color: #a8a8a8;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#rowPasswordSection .passwordGenerateDiv svg:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+#rowPasswordSection .passwordGenerateDiv > div > button {
+  background-color: #0197c5;
+  padding: 16px;
+  border-radius: 10px;
+  border: 2px solid #008ab4;
+  outline: none;
+  width: 100%;
+  margin: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px 7px #c5e8ff;
+}
+
+#rowPasswordSection .passwordGenerateDiv > div > button:hover {
+  background-color: #007396;
+}
+
+/* -------------------------------------------- */
+
+#rowPasswordSection .filterAndResetDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 10px 5px;
+}
+
+#rowPasswordSection .filterAndResetDiv p {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 2px #fff;
+  transition: all 0.4s ease;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+#rowPasswordSection .filterAndResetDiv p:nth-child(2) {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 2px #fff;
+  transition: all 0.4s ease;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+#rowPasswordSection .filterAndResetDiv svg {
+  width: 30px;
+  height: 30px;
+  color: #000000;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#rowPasswordSection .filterAndResetDiv p:nth-child(2):hover {
+  background-color: rgb(245, 245, 245);
+}
+
+#rowPasswordSection .customizeLengthFilter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  font-size: 13px;
+  width: 100%;
+  padding: 10px 30px 5px;
+}
+#rowPasswordSection .customizeLengthFilter p {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+#rowPasswordSection .customizeLengthFilter input {
+  outline: none;
+  border: 0px;
+  border-bottom: 2px solid black;
+  color: black;
+  font-weight: 600;
+  width: 40px;
+  text-align: center;
+}
+
+/* /////////////////////////////////////////////////// */
+
+/* From Uiverse.io by JkHuger */
+#rowPasswordSection #checklist {
+  --background: #fff;
+  --text: #414856;
+  --check: #4f29f0;
+  --disabled: #c3c8de;
+  --width: 100px;
+  --height: 120px;
+  --border-radius: 10px;
+  /* background: var(--background); */
+  min-width: var(--width);
+  min-height: var(--height);
+  border-radius: var(--border-radius);
+  position: relative;
+  /* box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05); */
+  padding: 0px 20px;
+  display: grid;
+  grid-template-columns: 30px auto;
+  align-content: space-between;
+  align-items: center;
+  justify-content: start;
+  margin: 20px 10px;
+}
+
+#rowPasswordSection #checklist label {
+  color: var(--text);
+  position: relative;
+  cursor: pointer;
+  display: grid;
+  align-items: center;
+  width: fit-content;
+  transition: color 0.3s ease;
+  margin-right: 20px;
+  font-size: 13px;
+}
+
+#rowPasswordSection #checklist label::before,
+#rowPasswordSection #checklist label::after {
+  content: "";
+  position: absolute;
+}
+
+#rowPasswordSection #checklist label::before {
+  height: 2px;
+  width: 8px;
+  left: -27px;
+  background: var(--check);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+#rowPasswordSection #checklist label:after {
+  height: 4px;
+  width: 4px;
+  top: 8px;
+  left: -25px;
+  border-radius: 50%;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  outline: none;
+  border: 0;
+  margin: 0 15px 0 0;
+  cursor: pointer;
+  background: var(--background);
+  display: grid;
+  align-items: center;
+  margin-right: 20px;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"]::before,
+#rowPasswordSection #checklist input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  top: auto;
+  background: var(--check);
+  border-radius: 2px;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"]::before {
+  width: 0px;
+  right: 60%;
+  transform-origin: right bottom;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"]::after {
+  width: 0px;
+  left: 40%;
+  transform-origin: left bottom;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"]:checked::before {
+  animation: check-01 0.4s ease forwards;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"]:checked::after {
+  animation: check-02 0.4s ease forwards;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"]:checked + label {
+  color: var(--disabled);
+  animation: move 0.3s ease 0.1s forwards;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"]:checked + label::before {
+  background: var(--disabled);
+  animation: slice 0.4s ease forwards;
+}
+
+#rowPasswordSection #checklist input[type="checkbox"]:checked + label::after {
+  animation: firework 0.5s ease forwards 0.1s;
+}
+
+@keyframes move {
+  50% {
+    padding-left: 8px;
+    padding-right: 0px;
+  }
+
+  100% {
+    padding-right: 4px;
+  }
+}
+
+@keyframes slice {
+  60% {
+    width: 100%;
+    left: 4px;
+  }
+
+  100% {
+    width: 100%;
+    left: -2px;
+    padding-left: 0;
+  }
+}
+
+@keyframes check-01 {
+  0% {
+    width: 4px;
+    top: auto;
+    transform: rotate(0);
+  }
+
+  50% {
+    width: 0px;
+    top: auto;
+    transform: rotate(0);
+  }
+
+  51% {
+    width: 0px;
+    top: 8px;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    width: 5px;
+    top: 8px;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes check-02 {
+  0% {
+    width: 4px;
+    top: auto;
+    transform: rotate(0);
+  }
+
+  50% {
+    width: 0px;
+    top: auto;
+    transform: rotate(0);
+  }
+
+  51% {
+    width: 0px;
+    top: 8px;
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    width: 10px;
+    top: 8px;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes firework {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0,
+      0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0, 0 0 0 -2px #4f29f0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    box-shadow: 0 -15px 0 0px #4f29f0, 14px -8px 0 0px #4f29f0,
+      14px 8px 0 0px #4f29f0, 0 15px 0 0px #4f29f0, -14px 8px 0 0px #4f29f0,
+      -14px -8px 0 0px #4f29f0;
+  }
+}
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+
+/* styles.css */
+#hashedPasswordSection {
+  width: 350px;
+  display: none;
+}
+
+#hashedPasswordSection .header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#hashedPasswordSection .header svg {
+  width: 30px;
+  height: 30px;
+  color: #a8a8a8;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#hashedPasswordSection .header svg:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+#hashedPasswordSection .header h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 2px #fff;
+  transition: all 0.4s ease;
+  color: #a0a0a0;
+}
+
+#hashedPasswordSection .header h4 span {
+  color: #27beec;
+}
+
+/* -------------------------------------------- */
+
+#hashedPasswordSection .hashing-options {
+  margin: 20px;
+}
+
+#hashedPasswordSection .hashing-options label {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  color: #005892;
+  border-radius: 5px;
+}
+#hashedPasswordSection .hashing-options #hash-method {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  color: #005892;
+  border-radius: 10px;
+  height: 50px;
+  padding: 0px 20px;
+  outline: none;
+}
+/* -------------------------------------------- */
+
+#hashedPasswordSection .password-input {
+  margin: 40px 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#hashedPasswordSection .password-input input {
+  width: 100%;
+  padding: 16px 25px;
+  border-radius: 9px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  outline: none;
+  margin: auto;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 0 0 2px #fff;
+  font-size: 15px;
+  transition: 500ms;
+}
+
+#hashedPasswordSection .password-input input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+}
+#hashedPasswordSection .password-input input:hover {
+  box-shadow: 0 0 20px 4px #e1f8ff;
+}
+
+/* -------------------------------------------- */
+
+#hashedPasswordSection #generateHashedPassword {
+  background-color: #0197c5;
+  padding: 16px;
+  border-radius: 10px;
+  border: 2px solid #008ab4;
+  outline: none;
+  width: 100%;
+  margin: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px 7px #c5e8ff;
+}
+
+#hashedPasswordSection #generateHashedPassword:hover {
+  background-color: #007396;
+}
+#hashedPasswordSection .generate-button p {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  color: rgb(0, 92, 122);
+}
+
+/* -------------------------------------------- */
+
+#hashedPasswordSection .generated-password {
+  padding: 15px 0px 10px;
+}
+
+#hashedPasswordSection p#hashedPasswordDisplay {
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  color: #006280;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+#hashedPasswordSection svg#copyHashedPassword {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  color: #a8a8a8;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+#hashedPasswordSection svg#copyHashedPassword:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////// */
+
+#jwtGeneratorSection {
+  width: 350px;
+  display: none;
+}
+
+#jwtGeneratorSection .header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#jwtGeneratorSection .header svg {
+  width: 30px;
+  height: 30px;
+  color: #a8a8a8;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#jwtGeneratorSection .header svg:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+#jwtGeneratorSection .header h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 2px #fff;
+  transition: all 0.4s ease;
+  color: #a0a0a0;
+}
+
+#jwtGeneratorSection .header h4 span {
+  color: #27beec;
+}
+
+/* -------------------------------------------- */
+
+#jwtGeneratorSection form#jwtForm {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+
+#jwtGeneratorSection #jwtForm > div {
+  margin: 20px 20px 0px;
+}
+
+/* -------------------------------------------- */
+
+#jwtGeneratorSection .jwt_header_div label {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+#jwtGeneratorSection .jwt_header_div textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 9px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  outline: none;
+  margin: auto;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 25px;
+  resize: none;
+  text-shadow: 0 0 2px #fff;
+  font-size: 14px;
+  transition: 500ms;
+}
+
+#jwtGeneratorSection .jwt_header_div textarea::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* -------------------------------------------- */
+
+#jwtGeneratorSection .jwt_payload_div label {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+#jwtGeneratorSection .jwt_payload_div textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 9px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  outline: none;
+  margin: auto;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 25px;
+  resize: vertical;
+  text-shadow: 0 0 2px #fff;
+  font-size: 14px;
+  transition: 500ms;
+}
+
+#jwtGeneratorSection .jwt_payload_div textarea::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* -------------------------------------------- */
+
+#jwtGeneratorSection .secret_input label {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+#jwtGeneratorSection .secret_input input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 9px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  outline: none;
+  margin: auto;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 0 0 2px #fff;
+  font-size: 14px;
+  transition: 500ms;
+}
+
+#jwtGeneratorSection .secret_input input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+}
+#jwtGeneratorSection .secret_input input:hover {
+  box-shadow: 0 0 20px 4px #e1f8ff;
+}
+
+/* -------------------------------------------- */
+
+#jwtGeneratorSection #generateHashedPassword {
+  background-color: #0197c5;
+  padding: 16px;
+  border-radius: 10px;
+  border: 2px solid #008ab4;
+  outline: none;
+  width: 100%;
+  margin: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px 7px #c5e8ff;
+}
+
+#jwtGeneratorSection #generateHashedPassword:hover {
+  background-color: #007396;
+}
+#jwtGeneratorSection .generate-button p {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  color: rgb(0, 92, 122);
+}
+
+/* -------------------------------------------- */
+
+#jwtGeneratorSection .generated-password {
+  padding: 15px 0px 10px;
+}
+
+#jwtGeneratorSection p#jwtToken {
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  color: #006280;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+#jwtGeneratorSection svg#copyJwtButton {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  color: #a8a8a8;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+#jwtGeneratorSection svg#copyJwtButton:hover {
+  background-color: rgb(245, 245, 245);
+}

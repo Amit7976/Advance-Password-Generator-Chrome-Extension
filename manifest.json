@@ -1,0 +1,77 @@
+{
+    "manifest_version": 3,
+    "name": "Advance Secure Password Generator",
+    "version": "1.0",
+    "description": "A highly secure and advanced password generator and manager with encryption and multiple security features.",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon64.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon64.png",
+        "128": "icons/icon128.png"
+    },
+    "commands": {
+        "generate_password": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+G",
+                "mac": "Command+Shift+G"
+            },
+            "description": "Generate a strong password instantly"
+        }
+    },
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>" ],
+            "js": [ "popup.js" ],
+            "css": [ "style.css" ],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [ "icons/*", "popup.html" ],
+            "matches": [ "<all_urls>" ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "optional_permissions": [
+        "geolocation",
+        "downloads"
+    ],
+    "omnibox": {
+        "keyword": "passgen"
+    },
+    "short_name": "SecurePassGen",
+    "incognito": "split",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "downloads",
+        "clipboardWrite",
+        "clipboardRead",
+        "contextMenus",
+        "notifications",
+        "tabs",
+        "alarms",
+        "cookies",
+        "scripting",
+        "webRequest",
+        "webRequestBlocking"
+    ]
+}

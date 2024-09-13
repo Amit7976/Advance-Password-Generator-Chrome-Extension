@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="crypto.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <div id="startingScreen">
+
+            <img src="/icons/icon512.png" alt="Icon" class="mainImageAtStartingScreen">
+
+
+            <ul>
+
+                <li>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                            <path fill="currentColor"
+                                d="M800 384h-32V261.872C768 115.024 661.744 0 510.816 0C359.28 0 256 117.472 256 261.872V384h-32c-70.592 0-128 57.408-128 128v384c0 70.592 57.408 128 128 128h576c70.592 0 128-57.408 128-128V512c0-70.592-57.408-128-128-128zM320 261.872C320 152.784 394.56 64 510.816 64C625.872 64 704 150.912 704 261.872V384H320V261.872zM864.001 896c0 35.28-28.72 64-64 64h-576c-35.28 0-64-28.72-64-64V512c0-35.28 28.72-64 64-64h576c35.28 0 64 28.72 64 64v384zm-352-320c-35.344 0-64 28.656-64 64c0 23.632 12.96 44.032 32 55.12V800c0 17.664 14.336 32 32 32s32-14.336 32-32V695.12c19.04-11.088 32-31.504 32-55.12c0-35.344-28.656-64-64-64z" />
+                        </svg>
+
+                        <p>
+                            <span>
+                                All your password within your reach:
+                            </span>
+                            So that you don't heave to scratch your head in order to remember them
+                        </p>
+                    </div>
+                </li>
+
+
+                <li>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M2.5 18.5v-1h19v1h-19Zm.535-5.973l-.762-.442l.965-1.693h-1.93v-.884h1.93l-.965-1.643l.762-.442L4 9.065l.965-1.642l.762.442l-.965 1.643h1.93v.884h-1.93l.965 1.693l-.762.442L4 10.835l-.965 1.692Zm8 0l-.762-.442l.965-1.693h-1.93v-.884h1.93l-.965-1.643l.762-.442L12 9.065l.965-1.642l.762.442l-.965 1.643h1.93v.884h-1.93l.965 1.693l-.762.442L12 10.835l-.965 1.692Zm8 0l-.762-.442l.965-1.693h-1.93v-.884h1.93l-.965-1.643l.762-.442L20 9.065l.965-1.642l.762.442l-.965 1.643h1.93v.884h-1.93l.965 1.693l-.762.442L20 10.835l-.965 1.692Z" />
+                        </svg>
+
+                        <p>
+                            <span>
+                                Create Multiple Types of Passwords:
+                            </span>
+                            Options include raw passwords, hashed passwords, JSON Web Tokens (JWT), and more.
+                        </p>
+                    </div>
+                </li>
+
+
+                <li>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 20.962q-3.013-.895-5.007-3.651Q5 14.554 5 11.1V5.692l7-2.615l7 2.615V11.1q0 3.454-1.993 6.21q-1.994 2.757-5.007 3.652Zm0-1.062q2.425-.75 4.05-2.962T17.95 12H12V4.144L6 6.375v5.156q0 .194.05.469H12v7.9Z" />
+                        </svg>
+
+                        <p>
+                            <span>
+                                Security & Privacy:
+                            </span>
+                            We encrypt your passwords on your device for security, but maintaining overall device safety
+                            is your responsibility.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+
+            <!-- /* From Uiverse.io by vinodjangid07 */ -->
+            <button class="Btn-Container" id="getStartedSet">
+                <span class="text">Get Started</span>
+                <span class="icon-Container">
+                    <svg width="16" height="19" viewBox="0 0 16 19" fill="nones" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="1.61321" cy="1.61321" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="5.73583" cy="1.61321" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="5.73583" cy="5.5566" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="9.85851" cy="5.5566" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="9.85851" cy="9.5" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="13.9811" cy="9.5" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="5.73583" cy="13.4434" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="9.85851" cy="13.4434" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="1.61321" cy="17.3868" r="1.5" fill="#b0edff"></circle>
+                        <circle cx="5.73583" cy="17.3868" r="1.5" fill="#b0edff"></circle>
+                    </svg>
+                </span>
+            </button>
+
+        </div>
+
+
+
+
+        <div id="accountSetup">
+            <h3 class="accountSetupTitle">Account Setup</h3>
+            <!-- /* From Uiverse.io by liyaxu123 */ -->
+            <div class="form-control">
+                <input type="value" required="" id="initialUserName">
+                <label>
+                    <span style="transition-delay:0ms">F</span>
+                    <span style="transition-delay:50ms">i</span>
+                    <span style="transition-delay:100ms">r</span>
+                    <span style="transition-delay:150ms">s</span>
+                    <span style="transition-delay:200ms">t</span>
+                    <span style="transition-delay:250ms"> </span>
+                    <span style="transition-delay:300ms">N</span>
+                    <span style="transition-delay:350ms">a</span>
+                    <span style="transition-delay:400ms">m</span>
+                    <span style="transition-delay:450ms">e</span>
+                </label>
+            </div>
+            <div class="form-control">
+                <input type="value" required="" id="masterPassword" placeholder="Master Password">
+            </div>
+            <div class="form-control">
+                <div>
+                    <p class="initialAccountPinLabel">Account Pin</p> <br>
+                    <input type="text" required="" id="initialAccountPin" minlength="5" maxlength="5"
+                        placeholder="_____">
+                </div>
+            </div>
+
+            <!-- /* From Uiverse.io by cssbuttons-io */ -->
+            <!-- Save Account Details Button -->
+            <button class="saveAccountDetailsInitial" id="saveAccountDetailsInitial">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Start Using</span>
+            </button>
+
+            <!-- Optional: Get Account Details for testing -->
+            <!-- <button id="getAccountDetails">Get Account Details</button> -->
+
+        </div>
+
+
+
+
+
+
+
+        <div class="pin-section" id="pinAuthSection">
+            <h2 class="pinAuthSectionTitle">Enter Your <span style="color: #25b2dd;">PIN</span></h2>
+
+            <!-- 5 separate input fields for PIN -->
+            <div id="pinInputs">
+                <input type="text" maxlength="1" id="pin1" autofocus placeholder="0">
+                <input type="text" maxlength="1" id="pin2" placeholder="0">
+                <input type="text" maxlength="1" id="pin3" placeholder="0">
+                <input type="text" maxlength="1" id="pin4" placeholder="0">
+                <input type="text" maxlength="1" id="pin5" placeholder="0">
+            </div>
+            <!-- /* From Uiverse.io by rona1231 */ -->
+            <button class="animated-button" id="submitPin">
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">CONTINUE</span>
+                <span class="circle"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
+
+            <p><i>Forget Pin Use <b style="text-decoration: underline; color: #25b2dd; cursor: pointer;" id="openMasterPasswordSection">Master Password</b></i></p>
+
+        </div>
+
+
+
+
+
+        <div class="master-pass-auth-section" id="masterPassAuthSection">
+            <h2 class="pinAuthSectionTitle">Enter Your <span style="color: #25b2dd;">Master Password</span></h2>
+
+            <!-- 5 separate input fields for PIN -->
+            <div id="masterPass">
+                <input type="text" id="masterPassInput" autofocus placeholder="Password">
+            </div>
+            <button class="animated-button" id="submitMasterPassForAuth">
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+                <span class="text">CONTINUE</span>
+                <span class="circle"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+                    <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                    </path>
+                </svg>
+            </button>
+            <p><i><b style="text-decoration: underline; color: #25b2dd; cursor: pointer;" id="openPinSection">Use Pin</b> For
+                    Unlock</i>
+            </p>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="dashboard-section" id="dashboardSection">
+
+
+            <div class="header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                    <path fill="currentColor"
+                        d="M96.26 37a8 8 0 0 1 5.74-9.71a104.11 104.11 0 0 1 52 0a8 8 0 0 1-2 15.75a8.15 8.15 0 0 1-2-.26a88 88 0 0 0-44 0A8 8 0 0 1 96.26 37m-62.91 73a8 8 0 0 0 9.85-5.57a87.88 87.88 0 0 1 22-38.09a8 8 0 0 0-11.4-11.2a103.92 103.92 0 0 0-26 45a8 8 0 0 0 5.55 9.86M150 213.22a88 88 0 0 1-44 0a8 8 0 0 0-4 15.49a104.11 104.11 0 0 0 52 0a8 8 0 0 0-4-15.49m62.8-108.77a8 8 0 0 0 15.42-4.28a104 104 0 0 0-26-45a8 8 0 1 0-11.41 11.21a88.14 88.14 0 0 1 21.98 38.07Zm15.44 51.39a103.68 103.68 0 0 1-30.68 49.47a8 8 0 0 1-12.49-2.31a64 64 0 0 0-114.14 0a8 8 0 0 1-12.48 2.32a103.74 103.74 0 0 1-30.68-49.49a8 8 0 0 1 15.42-4.27a87.58 87.58 0 0 0 19 34.88a79.57 79.57 0 0 1 36.1-28.77a48 48 0 1 1 59.38 0a79.57 79.57 0 0 1 36.1 28.77a87.58 87.58 0 0 0 19-34.88a8 8 0 1 1 15.42 4.28ZM128 152a32 32 0 1 0-32-32a32 32 0 0 0 32 32" />
+                </svg>
+
+                <h3>Hello! <span id="dashboardSectionUserName">UserName</span></h3>
+            </div>
+
+
+
+
+            <div>
+                <div id="catergoryAndToggle">
+                    <h4 class="catergoryAndToggle_category">Category</h4>
+                    <svg title="Toggle" xmlns="http://www.w3.org/2000/svg" id="catergoryAndToggle_Toggle"
+                        viewBox="0 0 24 24">
+                        <g fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M22 3H2m20 18H2" />
+                            <path fill="currentColor"
+                                d="M8 15V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2Z" />
+                        </g>
+                    </svg>
+                </div>
+
+
+                <div id="allPasswordType">
+                    <!-- /* From Uiverse.io by biswacpcode */ -->
+                    <div>
+                        <button id="goToRowPasswordSection">
+                            Row
+                        </button>
+                        <button id="goToHashedPasswordSection">
+                            Hashed
+                        </button>
+                    </div>
+                    <button id="goToJwtGeneratorSection">
+                        JWT Token Create
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div>
+                <!-- /* From Uiverse.io by adamgiebl */ -->
+                <div class="form-control">
+                    <input class="input input-alt" type="text" id="passwordSearchInput" placeholder="Search by title..."
+                        required="">
+                    <span class="input-border input-border-alt"></span>
+                </div>
+
+
+
+
+
+                <!-- Add Password Button -->
+                <div id="addPassForPassManager">
+                    <p>Add Password</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 448">
+                        <path fill="currentColor"
+                            d="M21 213h150v150q0 21 21-21t21-21V213h150q21 0 21-21t-21-21H213V21q0-21-21-21t-21 21v150H21q-21 0-21 21t21 21z" />
+                    </svg>
+                </div>
+
+                <!-- Modal Structure -->
+                <div id="addPasswordModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div>
+                            <input type="text" id="titleInput" placeholder="Enter title">
+                            <input type="password" id="passwordInput" placeholder="Enter password">
+                            <button id="savePassword">Save Password</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Edit Password Modal -->
+                <div id="editPasswordModal" class="modal" style="display:none;">
+                    <div class="modal-content">
+                        <div class="editPasswordModalHeading">
+                            <h2>Edit Password</h2>
+                            <span id="cancelEditBtn" class="close">&times;</span>
+                        </div>
+                        <div>
+                            <input type="text" id="editTitle" />
+                            <input type="text" id="editPassword" />
+                            <button id="saveChangesBtn">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Saved Passwords Display Section -->
+                <div id="passwordManager">
+                    <div>
+                        <div>
+                            <p class="platformName">Google</p>
+                            <p class="samplePass"> ********** </p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="row-password-section" id="rowPasswordSection">
+
+            <div class="header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="backFromRowPasswordSection">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="4" d="M31 36L19 24l12-12" />
+                </svg>
+
+                <h4>Row Password <span>Generator</span></h4>
+            </div>
+
+
+            <div class="passwordGenerateDiv">
+                <div>
+                    <p id="rowGeneratedPassword">XXXXXXXXXXXX</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 480">
+                        <path fill="currentColor"
+                            d="M299 5v43H43v299H0V48q0-18 12.5-30.5T43 5h256zm64 86q17 0 29.5 12.5T405 133v299q0 18-12.5 30.5T363 475H128q-18 0-30.5-12.5T85 432V133q0-17 12.5-29.5T128 91h235zm0 341V133H128v299h235z" />
+                    </svg>
+                </div>
+                <div>
+                    <div>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p id="rowGeneratedPasswordStrength">Check Now</p>
+                </div>
+                <div>
+                    <button>Generate New Password</button>
+                </div>
+            </div>
+
+
+            <div>
+
+                <div class="filterAndResetDiv">
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
+                        </svg>
+                        Filter
+                    </p>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                            <path fill="currentColor"
+                                d="M22.5 9a7.452 7.452 0 0 0-6.5 3.792V8h-2v8h8v-2h-4.383a5.494 5.494 0 1 1 4.883 8H22v2h.5a7.5 7.5 0 0 0 0-15Z" />
+                            <path fill="currentColor"
+                                d="M26 6H4v3.171l7.414 7.414l.586.586V26h4v-2h2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-8l-7.414-7.415A2 2 0 0 1 2 9.171V6a2 2 0 0 1 2-2h22Z" />
+                        </svg>
+                        Reset
+                    </p>
+                </div>
+
+
+                <div class="customizeLengthFilter">
+                    <p>Length</p>
+                    <input type="number" value="12" min="6" max="16">
+                </div>
+
+
+                <!-- /* From Uiverse.io by JkHuger */ -->
+                <div id="checklist">
+                    <input checked="" value="1" name="r" type="checkbox" id="01" disabled>
+                    <label for="01">Include Lower Case letter</label>
+                    <input checked="" value="1" name="r" type="checkbox" id="02" disabled>
+                    <label for="02">Include Upper Case letter</label>
+                    <input checked="" value="1" name="r" type="checkbox" id="03">
+                    <label for="03">Include Digits</label>
+                    <input checked="" value="1" name="r" type="checkbox" id="04">
+                    <label for="04">Include Special Characters</label>
+                    <input value="1" name="r" type="checkbox" id="05">
+                    <label for="05">Make Heavily Strong</label>
+                </div>
+
+                <div class="customizeLengthFilter">
+                    <p>How many digits</p>
+                    <input type="number" value="4" min="1" max="12">
+                </div>
+                <div class="customizeLengthFilter">
+                    <p>How many special characters</p>
+                    <input type="number" value="3" min="1" max="12">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="hashed-password-section" id="hashedPasswordSection">
+
+            <div class="header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="backFromHashedPasswordSection">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="4" d="M31 36L19 24l12-12" />
+                </svg>
+
+                <h4>Hashed Password <span>Generator</span></h4>
+            </div>
+
+            <div class="password-input">
+                <input type="text" id="password" placeholder="Enter password">
+            </div>
+
+            <div class="hashing-options">
+                <select id="hash-method">
+                    <option value="md5">MD5</option>
+                    <option value="sha256">SHA-256</option>
+                    <option value="sha512">SHA-512</option>
+                    <option value="sha1">SHA-1</option>
+                    <option value="sha3-256">SHA3-256</option>
+                    <option value="sha3-512">SHA3-512</option>
+                    <option value="hmac-sha256">HMAC-SHA256 (Key: ASP20)</option>
+                    <option value="hmac-sha512">HMAC-SHA512 (Key: ASP20)</option>
+                    <option value="sha224">SHA-224</option>
+                    <option value="sha384">SHA-384</option>
+                    <option value="ripemd160">RIPEMD-160</option>
+                    <option value="hmac-md5">HMAC-MD5 (Key: ASP20)</option>
+                    <option value="hmac-sha1">HMAC-SHA1 (Key: ASP20)</option>
+                    <option value="hmac-sha224">HMAC-SHA224 (Key: ASP20)</option>
+                    <option value="hmac-sha384">HMAC-SHA384 (Key: ASP20)</option>
+                    <option value="sha3-224">SHA3-224</option>
+                    <option value="sha3-384">SHA3-384</option>
+                    <option value="hmac-sha3">HMAC-SHA3 (Key: ASP20)</option>
+                    <option value="hmac-ripemd160">HMAC-RIPEMD160 (Key: ASP20)</option>
+                    <option value="pbkdf2">PBKDF2 (Salt: ASP20)</option>
+                    <option value="aes">AES (Key: ASP20)</option>
+                    <option value="des">DES (Key: ASP20)</option>
+                    <option value="tripledes">TripleDES (Key: ASP20)</option>
+                    <option value="rabbit">Rabbit (Key: ASP20)</option>
+                    <option value="rc4">RC4 (Key: ASP20)</option>
+                    <option value="rc4drop">RC4Drop (Key: ASP20)</option>
+                </select>
+                <label for="hash-method">Choose Hashing Method</label>
+
+            </div>
+
+
+            <div class="generate-button">
+                <button id="generateHashedPassword">Generate Hashed Password</button>
+            </div>
+
+            <div class="generated-password">
+                <p id="hashedPasswordDisplay">Hashed Password will appear here...</p>
+                <svg id="copyHashedPassword" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 480">
+                    <path fill="currentColor"
+                        d="M299 5v43H43v299H0V48q0-18 12.5-30.5T43 5h256zm64 86q17 0 29.5 12.5T405 133v299q0 18-12.5 30.5T363 475H128q-18 0-30.5-12.5T85 432V133q0-17 12.5-29.5T128 91h235zm0 341V133H128v299h235z" />
+                </svg>
+            </div>
+        </div>
+
+
+
+
+        <div class="jwt-generator-section" id="jwtGeneratorSection">
+
+            <div class="header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="backFromJwtGeneratorSection">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="4" d="M31 36L19 24l12-12" />
+                </svg>
+
+                <h4>JWT Token <span>Generator</span></h4>
+            </div>
+
+
+
+            <form id="jwtForm">
+                <div class="jwt_header_div">
+                    <label for="header">Header (JSON Format):</label>
+                    <textarea id="header" rows="2" spellcheck="false">{"alg": "HS256", "typ": "JWT"}</textarea>
+                </div>
+
+                <div class="jwt_payload_div">
+                    <label for="payload">Payload (JSON Format):</label>
+                    <textarea id="payload"
+                        rows="5">{"sub": "1234567890", "name": "John Doe", "iat": 1516239022}</textarea>
+                </div>
+
+                <div class="secret_input">
+                    <label for="secret">Secret Key:</label>
+                    <input type="text" id="secret" value="your-256-bit-secret" placeholder="Your JWT Secret Key">
+                </div>
+
+
+                <div class="generate-button">
+                    <button type="submit" id="generateHashedPassword">Generate Hashed Password</button>
+                </div>
+
+            </form>
+
+         
+
+            <div class="generated-password" id="generatedJWT">
+                <p id="jwtToken">JSON Web Token will appear here...</p>
+                <svg id="copyJwtButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 480">
+                    <path fill="currentColor"
+                        d="M299 5v43H43v299H0V48q0-18 12.5-30.5T43 5h256zm64 86q17 0 29.5 12.5T405 133v299q0 18-12.5 30.5T363 475H128q-18 0-30.5-12.5T85 432V133q0-17 12.5-29.5T128 91h235zm0 341V133H128v299h235z" />
+                </svg>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <script src="accountSetup.js"></script>
+    <script src="masterPassSection.js"></script>
+    <script src="dashboardSection.js"></script>
+    <script src="popup.js"></script>
+    <script src="rowPasswordGenrator.js"></script>
+    <script src="hashPasswordGenrator.js"></script>
+    <script src="JWTGenrator.js"></script>
+    <script src="startScreen.js"></script>
+    <script src="pinSection.js"></script>
+
+</body>
+</html>
