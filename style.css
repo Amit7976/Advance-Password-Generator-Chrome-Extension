@@ -1,20 +1,8 @@
-body {
+.container {
   font-family: Arial, sans-serif;
   width: 100%;
   padding: 15px 10px;
   background-color: #fff;
-}
-
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-*::-webkit-scrollbar {
-  display: none;
-}
-
-.container {
   text-align: center;
 }
 
